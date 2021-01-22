@@ -8,11 +8,15 @@ import org.springframework.web.bind.annotation.RestController;
 public class SampleController {
     SampleRestClientServiceImpl sampleRestClientService;
     SampleGrpcClientServiceImpl sampleGrpcClientService;
+    SampleGraphqlClientServiceImpl sampleGraphqlClientService;
 
     public SampleController(SampleRestClientServiceImpl sampleRestClientService,
-                            SampleGrpcClientServiceImpl sampleGrpcClientService) {
+                            SampleGrpcClientServiceImpl sampleGrpcClientService,
+                            SampleGraphqlClientServiceImpl sampleGraphqlClientService) {
+
         this.sampleRestClientService = sampleRestClientService;
         this.sampleGrpcClientService = sampleGrpcClientService;
+        this.sampleGraphqlClientService = sampleGraphqlClientService;
     }
 
     @RequestMapping("/rest/randomNumbers")
