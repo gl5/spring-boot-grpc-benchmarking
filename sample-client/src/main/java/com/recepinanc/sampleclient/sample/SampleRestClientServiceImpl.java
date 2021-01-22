@@ -17,7 +17,8 @@ public class SampleRestClientServiceImpl implements SampleRestClientService {
 
     @Override
     public void getRandomNumbers(int count) {
-        restTemplate.getForObject("http://localhost:4000/randomNumbers/?count=" + count, List.class);
+        List list = restTemplate.getForObject("http://localhost:4000/randomNumbers/?count=" + count, List.class);
+        System.out.println(list);
     }
 
     /**

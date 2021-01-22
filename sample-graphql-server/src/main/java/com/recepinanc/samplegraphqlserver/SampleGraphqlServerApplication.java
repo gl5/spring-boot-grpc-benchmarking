@@ -4,10 +4,10 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SampleSpringbootServerApplication {
+public class SampleGraphqlServerApplication {
 
     public static void main(String[] args) {
-        SpringApplication.run(SampleSpringbootServerApplication.class, args);
+        SpringApplication.run(SampleGraphqlServerApplication.class, args);
     }
 
 }

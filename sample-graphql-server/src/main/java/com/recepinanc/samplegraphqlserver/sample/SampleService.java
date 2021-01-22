@@ -6,7 +6,5 @@ import java.util.List;
 
 
 public interface SampleService {
-    List<Integer> getRandomNumbers(int count);
-
     List<LargeObject> getLargeObjects(int count);
 }

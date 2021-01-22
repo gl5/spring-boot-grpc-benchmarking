@@ -19,28 +19,18 @@ public class SampleController {
         this.sampleGraphqlClientService = sampleGraphqlClientService;
     }
 
-    @RequestMapping("/rest/randomNumbers")
-    public void restRandomNumber(@RequestParam("count") int count) {
-        sampleRestClientService.getRandomNumbers(count);
-    }
-
-    @RequestMapping(value = "/rest/largeObjects/json")
-    public void restLargeObjectsJson(@RequestParam("count") int count) {
-        sampleRestClientService.getLargeObjectsJson(count);
-    }
-
     @RequestMapping(value = "/rest/largeObjects")
     public void restLargeObjects(@RequestParam("count") int count) {
         sampleRestClientService.getLargeObjects(count);
     }
 
-    @RequestMapping("/grpc/randomNumbers")
-    public void grpcRandomNumber(@RequestParam("count") int count) {
-        sampleGrpcClientService.getRandomNumbers(count);
-    }
-
     @RequestMapping("/grpc/largeObjects")
     public void grpcLargeObjects(@RequestParam("count") int count) {
         sampleGrpcClientService.getLargeObjects(count);
+    }
+
+    @RequestMapping(value = "/graphql/largeObjects")
+    public void graphqlLargeObjects(@RequestParam("count") int count) {
+        sampleGraphqlClientService.getLargeObjects(count);
     }
 }
