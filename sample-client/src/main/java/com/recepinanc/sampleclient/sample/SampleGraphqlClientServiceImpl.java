@@ -14,26 +14,6 @@ import java.util.Map;
 public class SampleGraphqlClientServiceImpl implements SampleGraphqlClientService {
 
     @Override
-    public void getRandomNumbers(int count) {
-        //crate client
-        GraphqlClient client = GraphqlClient.buildGraphqlClient("http://localhost:5000/graphql");
-        //create query
-        GraphqlQuery query = new DefaultGraphqlQuery("getRandomNumbers");
-        //add query or mutation param
-        query.addParameter("count",count);
-        ResultAttributtes resultAttributtes = new ResultAttributtes("randomNumbers");
-        query.addResultAttributes(resultAttributtes);
-        try {
-            GraphqlResponse response = client.doQuery(query);
-            //this map is graphql result
-            Map data = response.getData();
-            System.out.println(response);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-
-    @Override
     public Object getLargeObjects(int count) {
         //crate client
         GraphqlClient client = GraphqlClient.buildGraphqlClient("http://localhost:5000/graphql");
@@ -41,14 +21,19 @@ public class SampleGraphqlClientServiceImpl implements SampleGraphqlClientServic
         GraphqlQuery query = new DefaultGraphqlQuery("getLargeObjects");
         //add query or mutation param
         query.addParameter("count",count);
-        query.addResultAttributes("largeObjects");
-        //ResultAttributtes resultAttributtes = new ResultAttributtes("data");
-        //query.addResultAttributes(resultAttributtes);
+        ResultAttributtes resultAttributtes = new ResultAttributtes("largeObjects");
+        ResultAttributtes field3Attributtes = new ResultAttributtes("field3");
+        field3Attributtes.addResultAttributes("field31", "field32");
+        ResultAttributtes field4Attributtes = new ResultAttributtes("field4");
+        field4Attributtes.addResultAttributes("field41", "field42");
+        resultAttributtes.addResultAttributes("field1", "field2");
+        resultAttributtes.addResultAttributes(field3Attributtes, field4Attributtes);
+        query.addResultAttributes(resultAttributtes);
         try {
             GraphqlResponse response = client.doQuery(query);
             //this map is graphql result
             Map data = response.getData();
-            System.out.println(data);
+            System.out.println("graphql response");
             return data;
         } catch (IOException e) {
             e.printStackTrace();
