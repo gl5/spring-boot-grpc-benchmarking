@@ -8,18 +8,15 @@ import org.springframework.web.client.RestTemplate;
 import com.recepinanc.samplegrpcserver.sample.LargeObjectResponse;
 
 @Service
-public class SampleRestClientServiceImpl implements SampleRestClientService
-{
+public class SampleRestClientServiceImpl implements SampleRestClientService {
     private final RestTemplate restTemplate;
 
-    public SampleRestClientServiceImpl(RestTemplate restTemplate)
-    {
+    public SampleRestClientServiceImpl(RestTemplate restTemplate) {
         this.restTemplate = restTemplate;
     }
 
     @Override
-    public void getRandomNumbers(int count)
-    {
+    public void getRandomNumbers(int count) {
         restTemplate.getForObject("http://localhost:4000/randomNumbers/?count=" + count, List.class);
     }
 
@@ -29,8 +26,7 @@ public class SampleRestClientServiceImpl implements SampleRestClientService
      * @param count
      */
     @Override
-    public void getLargeObjects(int count)
-    {
+    public void getLargeObjects(int count) {
         restTemplate.getForObject("http://localhost:4000/largeObjects/?count=" + count, LargeObjectResponse.class);
     }
 
@@ -40,8 +36,7 @@ public class SampleRestClientServiceImpl implements SampleRestClientService
      * @param count
      */
     @Override
-    public void getLargeObjectsJson(int count)
-    {
+    public void getLargeObjectsJson(int count) {
         restTemplate.getForObject("http://localhost:4000/largeObjects/json/?count=" + count, List.class);
     }
 }

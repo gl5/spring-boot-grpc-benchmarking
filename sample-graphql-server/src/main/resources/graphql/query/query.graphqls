@@ -1,0 +1,4 @@
+type Query {
+    getRandomNumbers(count: Int!): [Int]!
+    getLargeObjects(count: Int!): LargeObjectResponse!
+}

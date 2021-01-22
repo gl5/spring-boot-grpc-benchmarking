@@ -1,0 +1,160 @@
+type LargeObjectResponse {
+    largeObjects: [LargeObject!]
+}
+
+type LargeObject {
+    field1: Int,
+    field2: Int,
+    field3: Int,
+    field4: Int,
+    field5: Field5,
+    field6: Field6,
+    field7: String,
+    field8: String,
+    field9: Int,
+    field10: Int,
+    field11: Int,
+    field12: Int,
+    field13: Int,
+    field14: Int,
+    field15: Int,
+    field16: Int,
+    field17: Int,
+    field18: Float,
+    field19: Int,
+    field20: String,
+    field21: String,
+    field22: Int,
+    field23: Float,
+    field24: Float,
+    field25: Float,
+    field26: Float,
+    field27: Float,
+    field28: Float,
+    field29: Float,
+    field30: Boolean,
+    field31: Boolean,
+    field32: Boolean,
+    field33: Boolean,
+    field34: Boolean,
+    field35: Boolean,
+    field36: Field36,
+    field37: Field37,
+    field38: Int,
+    field39: Int,
+    field40: Int,
+    field41: Int,
+    field42: String,
+    field43: Int,
+    field44: String,
+    field45: Int,
+    field46: Int,
+    field47: String,
+    field48: Int,
+    field49: String,
+    field50: Int,
+    field51: String,
+    field52: Int,
+    field53: Boolean,
+    field54: Field54,
+    field55: Float,
+    field56: Int,
+    field57: String,
+    field58: String,
+    field59: Int,
+    field60: Int,
+    field61: String,
+    field62: String,
+    field63: String,
+    field64: Int,
+    field65: Boolean,
+    field66: Boolean,
+    field67: String,
+    field68: String,
+    field69: String,
+    field70: String,
+    field71: String,
+    field72: String,
+    field73: Boolean,
+    field74: Int,
+    field75: Int,
+    field76: Int,
+    field77: Int,
+    field78: Int,
+    field79: Int,
+    field80: Int,
+    field81: Int,
+    field82: Int,
+    field83: [Field83!],
+    field84: [Field84!],
+    field85: [Field85!]
+}
+
+enum Field5 {
+    FIELD_5_0,
+    FIELD_5_1,
+    FIELD_5_2,
+    FIELD_5_3,
+    FIELD_5_4,
+    FIELD_5_5,
+    FIELD_5_6,
+    FIELD_5_7,
+    FIELD_5_8,
+    FIELD_5_9,
+    FIELD_5_10
+}
+
+enum Field6 {
+    FIELD_6_0,
+    FIELD_6_1,
+    FIELD_6_2,
+    FIELD_6_3
+}
+
+enum Field36 {
+    FIELD_36_0,
+    FIELD_36_1
+}
+
+enum Field37 {
+    FIELD_37_0,
+    FIELD_37_1,
+    FIELD_37_2,
+    FIELD_37_3,
+    FIELD_37_4,
+    FIELD_37_5
+}
+
+enum Field54 {
+    FIELD_54_0,
+    FIELD_54_1,
+    FIELD_54_2,
+    FIELD_54_3,
+    FIELD_54_4,
+    FIELD_54_5,
+    FIELD_54_6
+}
+
+type Field83 {
+    field1: Int,
+    field2: Int,
+    field3: Int,
+    field4: String,
+    field5: String
+}
+
+type Field84 {
+    field1: Int,
+    field2: Int,
+    field3: Int,
+    field4: String,
+    field5: String
+}
+
+type Field85 {
+    field1: Int,
+    field2: Int,
+    field3: Int,
+    field4: String,
+    field5: String
+}

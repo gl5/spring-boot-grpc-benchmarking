@@ -11,11 +11,9 @@ import io.grpc.ManagedChannel;
 import io.grpc.ManagedChannelBuilder;
 
 @Service
-public class SampleGrpcClientServiceImpl implements SampleGrpcClientService
-{
+public class SampleGrpcClientServiceImpl implements SampleGrpcClientService {
     @Override
-    public void getRandomNumbers(int count)
-    {
+    public void getRandomNumbers(int count) {
         final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:3000")
                 .usePlaintext()
                 .build();
@@ -29,8 +27,7 @@ public class SampleGrpcClientServiceImpl implements SampleGrpcClientService
         channel.shutdownNow();
     }
 
-    public void getLargeObjects(int count)
-    {
+    public void getLargeObjects(int count) {
         final ManagedChannel channel = ManagedChannelBuilder.forTarget("localhost:3000")
                 .usePlaintext()
                 .maxInboundMessageSize(160800000)

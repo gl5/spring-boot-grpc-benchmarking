@@ -165,6 +165,8 @@ $RECYCLE.BIN/
 
 
 
+**/*.iml
+.idea
 
 
 

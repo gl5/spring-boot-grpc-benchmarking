@@ -1,4 +1,4 @@
-package com.recepinanc.samplespringbootserver.sample;
+package com.recepinanc.samplegraphqlserver.sample;
 
 import java.util.List;
 
@@ -7,21 +7,18 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.recepinanc.samplegrpcserver.sample.LargeObjectResponse;
-import com.recepinanc.samplespringbootserver.pojo.LargeObjectPOJO;
+import com.recepinanc.samplegraphqlserver.pojo.LargeObjectPOJO;
 
 @RestController
-public class SampleController
-{
+public class SampleController {
     SampleService sampleService;
 
-    public SampleController(SampleService sampleService)
-    {
+    public SampleController(SampleService sampleService) {
         this.sampleService = sampleService;
     }
 
     @RequestMapping("/randomNumbers")
-    public List<Integer> getRandomNumbers(@RequestParam("count") int count)
-    {
+    public List<Integer> getRandomNumbers(@RequestParam("count") int count) {
         return sampleService.getRandomNumbers(count);
     }
 
@@ -30,21 +27,18 @@ public class SampleController
      * @return a Proto Object
      */
     @RequestMapping("/largeObjects")
-    public LargeObjectResponse getLargeObjects(@RequestParam("count") int count)
-    {
+    public LargeObjectResponse getLargeObjects(@RequestParam("count") int count) {
         return LargeObjectResponse.newBuilder()
                 .addAllLargeObjects(sampleService.getLargeObjects(count))
                 .build();
     }
 
     /**
-     * 
      * @param count
      * @return a POJO List as JSON
      */
     @RequestMapping("/largeObjects/json")
-    public List<LargeObjectPOJO> getLargeObjectsJson(@RequestParam("count") int count)
-    {
+    public List<LargeObjectPOJO> getLargeObjectsJson(@RequestParam("count") int count) {
         return sampleService.getLargeObjectPOJOs(count);
     }
 }

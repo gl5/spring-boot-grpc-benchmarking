@@ -1,14 +1,12 @@
-package com.recepinanc.samplespringbootserver;
+package com.recepinanc.samplegraphqlserver;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class SampleSpringbootServerApplication
-{
+public class SampleSpringbootServerApplication {
 
-    public static void main(String[] args)
-    {
+    public static void main(String[] args) {
         SpringApplication.run(SampleSpringbootServerApplication.class, args);
     }
 

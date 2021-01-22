@@ -1,10 +1,10 @@
-package com.recepinanc.sampleclient;
+package com.recepinanc.samplegraphqlserver;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class SampleSpringbootClientApplicationTests {
+class SampleSpringbootServerApplicationTests {
 
     @Test
     void contextLoads() {

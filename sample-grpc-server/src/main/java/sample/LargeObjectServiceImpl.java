@@ -20,13 +20,11 @@ import com.recepinanc.samplegrpcserver.sample.LargeObjectServiceGrpc;
 
 import io.grpc.stub.StreamObserver;
 
-public class LargeObjectServiceImpl extends LargeObjectServiceGrpc.LargeObjectServiceImplBase
-{
+public class LargeObjectServiceImpl extends LargeObjectServiceGrpc.LargeObjectServiceImplBase {
     private static final Map<Integer, List<LargeObject>> LARGE_OBJECT_CACHE = new HashMap<>();
 
     @Override
-    public void getLargeObjects(LargeObjectRequest request, StreamObserver<LargeObjectResponse> responseObserver)
-    {
+    public void getLargeObjects(LargeObjectRequest request, StreamObserver<LargeObjectResponse> responseObserver) {
         int count = request.getCount();
 
         List<LargeObject> largeObjects = getLargeObjects(count);
@@ -39,10 +37,8 @@ public class LargeObjectServiceImpl extends LargeObjectServiceGrpc.LargeObjectSe
         responseObserver.onCompleted();
     }
 
-    public List<LargeObject> getLargeObjects(int count)
-    {
-        if (!LARGE_OBJECT_CACHE.containsKey(count))
-        {
+    public List<LargeObject> getLargeObjects(int count) {
+        if (!LARGE_OBJECT_CACHE.containsKey(count)) {
             List<LargeObject> largeObjects = generateLargeObjects(count);
             LARGE_OBJECT_CACHE.put(count, largeObjects);
         }
@@ -50,19 +46,16 @@ public class LargeObjectServiceImpl extends LargeObjectServiceGrpc.LargeObjectSe
         return LARGE_OBJECT_CACHE.get(count);
     }
 
-    private List<LargeObject> generateLargeObjects(int count)
-    {
+    private List<LargeObject> generateLargeObjects(int count) {
         List<LargeObject> largeObjects = new ArrayList<>();
 
-        for (int i = 0; i < count; i++)
-        {
+        for (int i = 0; i < count; i++) {
             largeObjects.add(generateLargeObject());
         }
         return largeObjects;
     }
 
-    private LargeObject generateLargeObject()
-    {
+    private LargeObject generateLargeObject() {
         return LargeObject.newBuilder()
                 .setField1(1L)
                 .setField2(1L)
@@ -152,38 +145,31 @@ public class LargeObjectServiceImpl extends LargeObjectServiceGrpc.LargeObjectSe
                 .build();
     }
 
-    private List<Field83> generateField83s()
-    {
+    private List<Field83> generateField83s() {
         List<Field83> field83s = new ArrayList<>();
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             field83s.add(generateField83());
         }
         return field83s;
     }
 
-    private List<Field84> generateField84s()
-    {
+    private List<Field84> generateField84s() {
         List<Field84> field84s = new ArrayList<>();
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             field84s.add(generateField84());
         }
         return field84s;
     }
 
-    private List<Field85> generateField85s()
-    {
+    private List<Field85> generateField85s() {
         List<Field85> field85s = new ArrayList<>();
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             field85s.add(generateField85());
         }
         return field85s;
     }
 
-    private Field83 generateField83()
-    {
+    private Field83 generateField83() {
         return Field83.newBuilder()
                 .setField1(1L)
                 .setField2(1L)
@@ -193,8 +179,7 @@ public class LargeObjectServiceImpl extends LargeObjectServiceGrpc.LargeObjectSe
                 .build();
     }
 
-    private Field84 generateField84()
-    {
+    private Field84 generateField84() {
         return Field84.newBuilder()
                 .setField1(1L)
                 .setField2(1L)
@@ -204,8 +189,7 @@ public class LargeObjectServiceImpl extends LargeObjectServiceGrpc.LargeObjectSe
                 .build();
     }
 
-    private Field85 generateField85()
-    {
+    private Field85 generateField85() {
         return Field85.newBuilder()
                 .setField1(1L)
                 .setField2(1L)

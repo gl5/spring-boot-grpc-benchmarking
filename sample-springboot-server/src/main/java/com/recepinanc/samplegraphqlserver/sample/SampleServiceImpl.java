@@ -1,4 +1,4 @@
-package com.recepinanc.samplespringbootserver.sample;
+package com.recepinanc.samplegraphqlserver.sample;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -17,26 +17,22 @@ import com.recepinanc.samplegrpcserver.sample.Field83;
 import com.recepinanc.samplegrpcserver.sample.Field84;
 import com.recepinanc.samplegrpcserver.sample.Field85;
 import com.recepinanc.samplegrpcserver.sample.LargeObject;
-import com.recepinanc.samplespringbootserver.pojo.LargeObjectPOJO;
+import com.recepinanc.samplegraphqlserver.pojo.LargeObjectPOJO;
 
 @Service
-public class SampleServiceImpl implements SampleService
-{
+public class SampleServiceImpl implements SampleService {
     private static final Map<Integer, List<LargeObject>> LARGE_OBJECT_CACHE = new HashMap<>();
     private static final Map<Integer, List<LargeObjectPOJO>> LARGE_OBJECT_AS_JSON_CACHE = new HashMap<>();
     private static final Random RANDOM_GENERATOR = new Random();
 
     @Override
-    public List<Integer> getRandomNumbers(int count)
-    {
+    public List<Integer> getRandomNumbers(int count) {
         return generateRandomNumbers(count);
     }
 
     @Override
-    public List<LargeObject> getLargeObjects(int count)
-    {
-        if (!LARGE_OBJECT_CACHE.containsKey(count))
-        {
+    public List<LargeObject> getLargeObjects(int count) {
+        if (!LARGE_OBJECT_CACHE.containsKey(count)) {
             List<LargeObject> largeObjects = generateLargeObjects(count);
             LARGE_OBJECT_CACHE.put(count, largeObjects);
         }
@@ -45,10 +41,8 @@ public class SampleServiceImpl implements SampleService
     }
 
     @Override
-    public List<LargeObjectPOJO> getLargeObjectPOJOs(int count)
-    {
-        if (!LARGE_OBJECT_AS_JSON_CACHE.containsKey(count))
-        {
+    public List<LargeObjectPOJO> getLargeObjectPOJOs(int count) {
+        if (!LARGE_OBJECT_AS_JSON_CACHE.containsKey(count)) {
             List<LargeObjectPOJO> largeObjectPOJOS = generateLargeObjectPOJOs(count);
             LARGE_OBJECT_AS_JSON_CACHE.put(count, largeObjectPOJOS);
         }
@@ -56,40 +50,33 @@ public class SampleServiceImpl implements SampleService
         return LARGE_OBJECT_AS_JSON_CACHE.get(count);
     }
 
-    private List<Integer> generateRandomNumbers(int count)
-    {
+    private List<Integer> generateRandomNumbers(int count) {
         List<Integer> randomNumbers = new ArrayList<>();
-        for (int i = 0; i < count; i++)
-        {
+        for (int i = 0; i < count; i++) {
             randomNumbers.add(RANDOM_GENERATOR.nextInt(10) + 1);
         }
         return randomNumbers;
     }
 
-    private List<LargeObject> generateLargeObjects(int count)
-    {
+    private List<LargeObject> generateLargeObjects(int count) {
         List<LargeObject> largeObjects = new ArrayList<>();
 
-        for (int i = 0; i < count; i++)
-        {
+        for (int i = 0; i < count; i++) {
             largeObjects.add(generateLargeObject());
         }
         return largeObjects;
     }
 
-    private List<LargeObjectPOJO> generateLargeObjectPOJOs(int count)
-    {
+    private List<LargeObjectPOJO> generateLargeObjectPOJOs(int count) {
         List<LargeObjectPOJO> largeObjectPOJOS = new ArrayList<>();
 
-        for (int i = 0; i < count; i++)
-        {
+        for (int i = 0; i < count; i++) {
             largeObjectPOJOS.add(generateLargeObjectPOJO());
         }
         return largeObjectPOJOS;
     }
 
-    private LargeObject generateLargeObject()
-    {
+    private LargeObject generateLargeObject() {
         return LargeObject.newBuilder()
                 .setField1(1L)
                 .setField2(1L)
@@ -179,8 +166,7 @@ public class SampleServiceImpl implements SampleService
                 .build();
     }
 
-    private LargeObjectPOJO generateLargeObjectPOJO()
-    {
+    private LargeObjectPOJO generateLargeObjectPOJO() {
         LargeObjectPOJO largeObjectPOJO = new LargeObjectPOJO();
         largeObjectPOJO.setField1(1L);
         largeObjectPOJO.setField2(1L);
@@ -262,38 +248,31 @@ public class SampleServiceImpl implements SampleService
         return largeObjectPOJO;
     }
 
-    private List<Field83> generateField83s()
-    {
+    private List<Field83> generateField83s() {
         List<Field83> field83s = new ArrayList<>();
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             field83s.add(generateField83());
         }
         return field83s;
     }
 
-    private List<Field84> generateField84s()
-    {
+    private List<Field84> generateField84s() {
         List<Field84> field84s = new ArrayList<>();
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             field84s.add(generateField84());
         }
         return field84s;
     }
 
-    private List<Field85> generateField85s()
-    {
+    private List<Field85> generateField85s() {
         List<Field85> field85s = new ArrayList<>();
-        for (int i = 0; i < 10; i++)
-        {
+        for (int i = 0; i < 10; i++) {
             field85s.add(generateField85());
         }
         return field85s;
     }
 
-    private Field83 generateField83()
-    {
+    private Field83 generateField83() {
         return Field83.newBuilder()
                 .setField1(1L)
                 .setField2(1L)
@@ -303,8 +282,7 @@ public class SampleServiceImpl implements SampleService
                 .build();
     }
 
-    private Field84 generateField84()
-    {
+    private Field84 generateField84() {
         return Field84.newBuilder()
                 .setField1(1L)
                 .setField2(1L)
@@ -314,8 +292,7 @@ public class SampleServiceImpl implements SampleService
                 .build();
     }
 
-    private Field85 generateField85()
-    {
+    private Field85 generateField85() {
         return Field85.newBuilder()
                 .setField1(1L)
                 .setField2(1L)

@@ -1,12 +1,11 @@
-package com.recepinanc.samplespringbootserver.sample;
+package com.recepinanc.samplegraphqlserver.sample;
 
 import java.util.List;
 
 import com.recepinanc.samplegrpcserver.sample.LargeObject;
-import com.recepinanc.samplespringbootserver.pojo.LargeObjectPOJO;
+import com.recepinanc.samplegraphqlserver.pojo.LargeObjectPOJO;
 
-public interface SampleService
-{
+public interface SampleService {
     List<Integer> getRandomNumbers(int count);
 
     List<LargeObject> getLargeObjects(int count);

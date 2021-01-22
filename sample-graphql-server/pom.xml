@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.recepinanc</groupId>
-    <artifactId>sample-springboot-server</artifactId>
+    <artifactId>sample-graphql-server</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>sample-springboot-server</name>
+    <name>sample-graphql-server</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -40,6 +40,37 @@
             <groupId>com.recepinanc</groupId>
             <artifactId>sample-grpc-codegen</artifactId>
             <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <!-- graphql -->
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphql-spring-boot-starter</artifactId>
+            <version>7.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphql-java-tools</artifactId>
+            <version>6.2.0</version>
+        </dependency>
+        <dependency>
+            <groupId>com.graphql-java</groupId>
+            <artifactId>graphql-java-extended-scalars</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <!-- graphql testing facilities -->
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>graphql-spring-boot-starter-test</artifactId>
+            <version>7.1.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- to embed Playgound tool -->
+        <dependency>
+            <groupId>com.graphql-java-kickstart</groupId>
+            <artifactId>playground-spring-boot-starter</artifactId>
+            <version>7.1.0</version>
+            <scope>runtime</scope>
         </dependency>
     </dependencies>
 

@@ -10,13 +10,11 @@ import com.recepinanc.samplegrpcserver.sample.SampleResponse;
 
 import io.grpc.stub.StreamObserver;
 
-public class SampleServiceImpl extends SampleGrpc.SampleImplBase
-{
+public class SampleServiceImpl extends SampleGrpc.SampleImplBase {
     private static final Random RANDOM_GENERATOR = new Random();
 
     @Override
-    public void randomNumber(SampleRequest request, StreamObserver<SampleResponse> responseObserver)
-    {
+    public void randomNumber(SampleRequest request, StreamObserver<SampleResponse> responseObserver) {
         int count = request.getCount();
 
         List<Integer> randomNumbers = getRandomNumbers(count);
@@ -29,16 +27,13 @@ public class SampleServiceImpl extends SampleGrpc.SampleImplBase
         responseObserver.onCompleted();
     }
 
-    public List<Integer> getRandomNumbers(int count)
-    {
+    public List<Integer> getRandomNumbers(int count) {
         return generateRandomNumbers(count);
     }
 
-    private List<Integer> generateRandomNumbers(int count)
-    {
+    private List<Integer> generateRandomNumbers(int count) {
         List<Integer> randomNumbers = new ArrayList<>();
-        for (int i = 0; i < count; i++)
-        {
+        for (int i = 0; i < count; i++) {
             randomNumbers.add(RANDOM_GENERATOR.nextInt(10) + 1);
         }
         return randomNumbers;
